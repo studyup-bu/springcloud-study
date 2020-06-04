@@ -1,0 +1,21 @@
+#端口号
+server:
+  port: 9001
+
+#服务名
+spring:
+  application:
+    name: nacos-payment-provider
+  #nacos配置
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848   #nacos地址我是mxb
+
+#springboot 监控 Actuator  端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'  #暴露所有端点    可配置部分端点暴露
+#        exclude: '*'  #不暴露所有端点  可配置部分端点暴露

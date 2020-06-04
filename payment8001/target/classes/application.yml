@@ -1,0 +1,37 @@
+#服务端口号
+server:
+  port: 8001
+#spring配置
+spring:
+  application:
+    name: payment-server  #服务名称
+
+  #数据库配置
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springcloudstudy?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: root123
+#mybatis配置
+mybatis:
+  mapperLocations: classpath:mapper/*.xml #mapper.xml文件扫描路径
+  type-aliases-package: com.byz.springcloud.entities  #mapper.xml文件中实体类扫描路径
+
+#eureka配置
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+#      defaultZone: http://eureka-server7001.com:7001/eureka #单机注册
+      defaultZone: http://eureka-server7001.com:7001/eureka,http://eureka-server7002.com:7002/eureka #eureka集群服务注册
+    #禁止eureka自我保护
+    #设置客户端心跳检测与续约时间
+#  instance:
+#    #eureka客户端向服务端发送心跳间隔时间设置，默认为30m，单位为秒
+#    lease-renewal-interval-in-seconds = 1
+#    #eureka服务端在收到最后一次心跳后，等待时间上限，默认为90m,单位为秒
+#    lease-expiration-duration-in-seconds = 2
+
+

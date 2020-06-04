@@ -1,0 +1,17 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: feign-hystrix-order
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka-server7001.com:7001/eureka #单机注册
+#        defaultZone: http://eureka-server7001.com:7001/eureka,http://eureka-server7002.com:7002/eureka #eureka集群服务注册
+
+feign:
+  hystrix:
+    enabled: true # 允许自身处理容错，就开启

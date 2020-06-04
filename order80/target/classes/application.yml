@@ -1,0 +1,19 @@
+#服务端口
+server:
+  port: 80
+
+#spring配置
+spring:
+  application:
+    name: order80
+
+#eureka配置
+eureka:
+  client:
+    register-with-eureka: true
+    fetchRegistry: true
+    service-url:
+      defaultZone: http://eureka-server7001.com:7001/eureka #单机服务注册
+#      defaultZone: http://eureka-server7001.com:7001/eureka,http://eureka-server7002.com:7002/eureka #eureka集群服务注册
+
+
